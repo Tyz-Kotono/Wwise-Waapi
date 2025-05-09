@@ -28,7 +28,7 @@ try:
         # }
         # result = client.call(Wwise_core_object_get, args)
 
-        result = setCoreObjectGetByID(client, "{5C0F82B0-CB54-4103-9C6B-767B9CAA9E38}")
+        result = core_object_get_by_id(client, "{5C0F82B0-CB54-4103-9C6B-767B9CAA9E38}")
         pprint(result)
 
 
