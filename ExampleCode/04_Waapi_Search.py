@@ -17,11 +17,20 @@ try:
     # Connecting to Waapi using default URL
     with WaapiClient() as client:
 
-        _type = setCoreObjectGet(client, "EQ")
-
+        # by string
+        # _type = setCoreObjectGetBySearch(client, "EQ")
         # pprint(_type)
 
-        pprint(_type)
+        # by ID
+        # args = {
+        #     "from": {"id": ["{5C0F82B0-CB54-4103-9C6B-767B9CAA9E38}"]},
+        #     "options": {"return": [Wwise_id, Wwise_type, Wwise_name]},
+        # }
+        # result = client.call(Wwise_core_object_get, args)
+
+        result = setCoreObjectGetByID(client, "{5C0F82B0-CB54-4103-9C6B-767B9CAA9E38}")
+        pprint(result)
+
 
 except CannotConnectToWaapiException:
     print(

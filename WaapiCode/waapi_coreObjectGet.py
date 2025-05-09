@@ -2,9 +2,21 @@ from .waapi_type import *
 from .waapi_constants import *
 
 
-def setCoreObjectGet(waapi, searchString):
+def setCoreObjectGetBySearch(
+    waapi, searchString, options=[Wwise_id, Wwise_type, Wwise_name]
+):
     args = {
         "from": {"search": [searchString]},
-        "options": {"return": [Wwise_id, Wwise_type, Wwise_name]},
+        "options": {"return": options},
+    }
+    return waapi.call(Wwise_core_object_get, args)
+
+
+def setCoreObjectGetByID(
+    waapi, searchString, options=[Wwise_id, Wwise_type, Wwise_name]
+):
+    args = {
+        "from": {"id": [searchString]},
+        "options": {"return": options},
     }
     return waapi.call(Wwise_core_object_get, args)

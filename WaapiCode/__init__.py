@@ -4,3 +4,5 @@ from .waapi_coreObjectGet import *
 from .waapi_constants import *
 from .waapi_getInforVersion import *
 from .waapi_getSelectedObjects import *
+
+from .waapi_transform import *
