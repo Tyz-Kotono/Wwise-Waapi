@@ -5,9 +5,14 @@ This module defines WAAPI command strings as constants for easy reuse and typo p
 """
 
 # === Core Commands ===
+# https://www.audiokinetic.com/zh/public-library/2024.1.4_8780/?source=SDK&id=ak_wwise_core_getinfo.html
+
 Wwise_core_getInfo: str = "ak.wwise.core.getInfo"
 
+
 # === Object Commands ===
+# https://www.audiokinetic.com/zh/public-library/2024.1.4_8780/?source=SDK&id=ak_wwise_core_object_get.html
+
 Wwise_core_object_get: str = "ak.wwise.core.object.get"
 Wwise_core_object_setName: str = "ak.wwise.core.object.setName"
 Wwise_core_object_create: str = "ak.wwise.core.object.create"
