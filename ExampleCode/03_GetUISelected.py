@@ -6,7 +6,6 @@ import os
 parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(parent_dir)
 
-from WaapiCode import *
 
 from waapi import WaapiClient, CannotConnectToWaapiException
 from pprint import pprint
@@ -17,8 +16,8 @@ try:
     with WaapiClient() as client:
 
         result = client.call(
-            Wwise_ui_getSelectedObjects,
-            options={"return": [Wwise_id, Wwise_type, Wwise_name]},
+            "ak.wwise.ui.getSelectedObjects",
+            options={"return": ["id", "type", "name"]},
         )
 
         _type = result["objects"]  # [0]["type"]

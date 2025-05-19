@@ -1,3 +1,8 @@
+from .Waapi_type import *
+from .Waapi_Core import *
+from waapi import WaapiClient
+from typing import List, Any, Dict
+
 # === form ===
 
 # Specify a list of object IDs (GUIDs). Used to find objects when you already have their IDs.
@@ -64,11 +69,6 @@ categoryIsIn: str = "category:isIn"
 # Filter the previous iterator results, keeping only unique objects.
 
 distinct: str = "distinct"
-
-from .waapi_type import *
-from .waapi_constants import *
-from waapi import WaapiClient
-from typing import List, Any, Dict
 
 
 def Search_Object_By_Name(client: WaapiClient, text: str) -> list:

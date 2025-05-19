@@ -6,7 +6,7 @@ import os
 parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(parent_dir)
 
-from WaapiCode import *
+from WaapiCore import *
 
 
 from waapi import WaapiClient, CannotConnectToWaapiException

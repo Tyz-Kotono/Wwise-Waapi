@@ -1,11 +1,7 @@
-from .waapi_type import *
-from .waapi_constants import *
+from .Waapi_type import *
+from .Waapi_Core import *
 from waapi import WaapiClient
 from typing import List, Any, Dict
-
-
-
-
 
 
 def core_object_get_by_search(
