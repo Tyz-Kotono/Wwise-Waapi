@@ -2,11 +2,10 @@
 import sys
 import os
 
-parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-sys.path.append(parent_dir)
-from ..Src.WaapiCore import *
 from waapi import WaapiClient, CannotConnectToWaapiException
 from pprint import pprint
+
+# https://www.audiokinetic.com/zh/public-library/2024.1.5_8803/?source=SDK&id=ak_wwise_core_object_get.html
 
 
 def Serach_Object_By_Type(
@@ -14,12 +13,12 @@ def Serach_Object_By_Type(
 ) -> list:
     args = {
         "from": {"ofType": [type_str]},
-        "transform": [{"where": [nameContains, name_substring]}],
+        "transform": [{"where": ["name:contains", name_substring]}],
     }
 
-    options = {"return": [Wwise_id, Wwise_type, Wwise_name]}
+    options = {"return": ["id", "type", "name"]}
 
-    result = client.call(Wwise_core_object_get, args, options=options)
+    result = client.call("ak.wwise.core.object.get", args, options=options)
 
     if result and result["return"]:
         return result["return"]
@@ -27,11 +26,8 @@ def Serach_Object_By_Type(
 
 
 try:
-    # Connecting to Waapi using default URL
-    with WaapiClient() as client:
-        # result = Search_Object_By_Name(client, "EQ")
-        # pprint(result)
 
+    with WaapiClient() as client:
         result = Serach_Object_By_Type(client, "EQ", "Folder")
         pprint(result)
 

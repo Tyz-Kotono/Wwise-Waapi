@@ -1,4 +1,4 @@
-from .Waapi_type import *
+from .Waapi_Type import *
 from .Waapi_Core import *
 from waapi import WaapiClient
 from typing import List, Any, Dict
