@@ -82,8 +82,8 @@ class QTMainWindow(QMainWindow):
         LoopTriggerFunction(self.event_callbacks.get(QEventType.Type.Enter, []))
 
     def closeEvent(self, event):
+        super().closeEvent(event)
         LoopTriggerFunction(self.event_callbacks.get(QEventType.Type.Close, []))
-        return super().closeEvent(event)
 
 
 def LoopTriggerFunction(callbacks):

@@ -1,5 +1,6 @@
 from waapi import WaapiClient, CannotConnectToWaapiException
 from pprint import pprint
+from WaapiSubSystem import *
 
 """
 Documentation:
@@ -12,7 +13,11 @@ https://www.audiokinetic.com/zh/public-library/2024.1.5_8803/?source=SDK&id=ak_w
 """
 
 
-def getSelectedObjects(client: WaapiClient, opstions: dir = None):
+def getSelectedObjects(client: WaapiClient, opstionList: dir = None, pack: bool = True):
+    if pack:
+        opstions = {"return": opstionList}
+    else:
+        opstions = opstionList
 
     if opstions is None:
         opstions = {"return": ["id", "type", "name"]}
