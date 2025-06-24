@@ -1,1 +1,0 @@
-from    .QTDock_DataMap import QTDockDataMap
